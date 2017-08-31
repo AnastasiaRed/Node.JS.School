@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>NodeJS School</title>
+        <link href="style.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <main>
+            <form id="myForm" action="response/success.json" class="form" method="POST">
+                <div class="form-control">
+                    <label for="fio">ФИО</label>   
+                    <br/>             
+                    <input 
+                        id="fio" 
+                        type="text" 
+                        name="fio" 
+                        placeholder="Иванов Иван Иванович"  
+                        pattern="([-\.'\w]+)\s([-\.'\w]+)\s([-\.'\w]+)" 
+                        title="Пожалуйста, используйте ровно три слова" 
+                        required
+                    />
+                </div>
+                <div class="form-control">                    
+                    <label for="email">Email</label>         
+                    <br/>                    
+                    <input 
+                        id="email" 
+                        type="email" 
+                        name="email" 
+                        placeholder="example@yandex.ru" 
+                        pattern="[A-Za-z0-9_-]+(?:\.[A-Za-z0-9=?^_`{|}~-]+)*@(ya.ru|yandex.ru|yandex.ua|yandex.by|yandex.kz|yandex.com)$" 
+                        title="Пожалуйста, используйте email в доменах ya.ru, yandex.ru, yandex.ua, yandex.by, yandex.kz, yandex.com" 
+                        required
+                    />
+                </div>
+                <div class="form-control">
+                    <label for="phone">Телефон</label>    
+                    <br/>                         
+                    <input 
+                        id="phone" 
+                        type="text" 
+                        name="phone" 
+                        placeholder="+7(999)999-99-99" 
+                        pattern="^\+7\((\d{3})\)(\d{3})-(\d{2})-(\d{2})$" 
+                        title="Пожалуйста, введите телефон в формате +7(999)999-99-99" 
+                        required
+                    />    
+                </div>
+                <button id="submitButton">Отправить</button>   
+                <br/>
+                <div id="resultContainer"></div>   
+            </form>        
+        </main>
+        <script src="index.js"></script>
+    </body>
+</html>
